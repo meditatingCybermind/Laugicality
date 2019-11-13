@@ -34,7 +34,8 @@ namespace EnigmaLite.Items.Accessories
             player.maxMinions++;
             player.resistCold = true;
             player.lifeMagnet = true;
-            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 20 * 20 - (player.statLifeMax / 5 / 20 * 20);
+            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 30 * 30 - (player.statLifeMax / 5 / 30 * 30);
+            player.lifeRegen = (int)(player.lifeRegen * 1.1f);            
             player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
@@ -50,12 +51,12 @@ namespace EnigmaLite.Items.Accessories
             player.blockRange++;
             player.pickSpeed -= 0.25f;
             player.moveSpeed += 0.25f;
-            player.endurance += 0.10f;
-            player.allDamage += 0.10f;
-            player.meleeCrit += 10;
-            player.rangedCrit += 10;
-            player.magicCrit += 10;
-            player.thrownCrit += 10;
+            player.endurance += 0.20f;
+            player.allDamage += 0.20f;
+            player.meleeCrit += 20;
+            player.rangedCrit += 20;
+            player.magicCrit += 20;
+            player.thrownCrit += 20;
             player.manaRegenBonus += 25;
             player.magicDamage += 0.20f;
             player.kbBuff = true;
@@ -73,7 +74,7 @@ namespace EnigmaLite.Items.Accessories
             recipe.AddIngredient(null, "AncientRelic", 1);
             recipe.AddIngredient(null, "CursedRelic", 1);
             recipe.AddIngredient(null, "HallowedRelic", 1);
-            recipe.AddTile(TileID.CrystalBall);
+            recipe.AddTile(412);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

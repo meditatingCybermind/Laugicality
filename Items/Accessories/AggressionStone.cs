@@ -8,7 +8,7 @@ namespace EnigmaLite.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("+10% Ranged damage \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen");
+            Tooltip.SetDefault("+10% Ranged damage and All Crit Chance \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen");
         }
 
         public override void SetDefaults()
@@ -27,6 +27,10 @@ namespace EnigmaLite.Items.Accessories
             player.kbBuff = true;
             player.ammoCost80 = true;
             player.rangedDamage += 0.10f;
+            player.meleeCrit += 10;
+            player.rangedCrit += 10;
+            player.magicCrit += 10;
+            player.thrownCrit += 10;
         }
 
         public override void AddRecipes()
@@ -34,6 +38,7 @@ namespace EnigmaLite.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ReichCrystal", 1);
             recipe.AddIngredient(null, "KekCrystal", 1);
+            recipe.AddIngredient(null, "AquosGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

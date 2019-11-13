@@ -31,7 +31,8 @@ namespace EnigmaLite.Items.Accessories
             player.maxMinions++;
             player.resistCold = true;
             player.lifeMagnet = true;
-            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 20 * 20 - (player.statLifeMax / 5 / 20 * 20);
+            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 30 * 30 - (player.statLifeMax / 5 / 30 * 30);
+            player.lifeRegen = (int)(player.lifeRegen * 1.1f);
         }
 
         public override void AddRecipes()

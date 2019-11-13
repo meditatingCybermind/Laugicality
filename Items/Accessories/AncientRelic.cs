@@ -38,6 +38,7 @@ namespace EnigmaLite.Items.Accessories
             player.pickSpeed -= 0.25f;
             player.slowFall = true;
             player.moveSpeed += 0.25f;
+            player.endurance += 0.10f;
         }
 
         public override void AddRecipes()

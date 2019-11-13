@@ -9,7 +9,7 @@ namespace EnigmaLite.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("+10% Damage reduction \n+10% Damage and critical strike chance \n Attackers take damage \nSet your enemies ablaze");
+            Tooltip.SetDefault("+10% Damage reduction \n+20% Damage, 10% critical strike chance \n Attackers take damage \nSet your enemies ablaze");
         }
 
         public override void SetDefaults()
@@ -30,7 +30,7 @@ namespace EnigmaLite.Items.Accessories
             {
                 player.thorns = 0.333333343f;
             }
-            player.allDamage += 0.10f;
+            player.allDamage += 0.20f;
             player.meleeCrit += 10;
             player.rangedCrit += 10;
             player.magicCrit += 10;
@@ -42,6 +42,7 @@ namespace EnigmaLite.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "PanzerCrystal", 1);
             recipe.AddIngredient(null, "MachtCrystal", 1);
+            recipe.AddIngredient(null, "RubrumGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

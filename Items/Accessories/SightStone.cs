@@ -10,7 +10,7 @@ namespace EnigmaLite.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vision Stone");
-            Tooltip.SetDefault("Mastery of light");
+            Tooltip.SetDefault("Mastery of light \n+10% Life Regen");
         }
 
         public override void SetDefaults()
@@ -29,6 +29,7 @@ namespace EnigmaLite.Items.Accessories
             player.nightVision = true;
             player.detectCreature = true;
             player.dangerSense = true;
+            player.lifeRegen = (int)(player.lifeRegen * 1.1f);
         }
 
         public override void AddRecipes()
@@ -36,6 +37,7 @@ namespace EnigmaLite.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "LichtCrystal", 1);
             recipe.AddIngredient(null, "SichtCrystal", 1);
+            recipe.AddIngredient(null, "RegisGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

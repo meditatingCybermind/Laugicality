@@ -25,11 +25,11 @@ namespace EnigmaLite.Items.Accessories
         {
             player.endurance += 0.10f;
             player.AddBuff(116, 2);
-            player.allDamage += 0.10f;
-            player.meleeCrit += 10;
-            player.rangedCrit += 10;
-            player.magicCrit += 10;
-            player.thrownCrit += 10;
+            player.allDamage += 0.20f;
+            player.meleeCrit += 20;
+            player.rangedCrit += 20;
+            player.magicCrit += 20;
+            player.thrownCrit += 20;
             player.manaRegenBonus += 25;
             player.magicDamage += 0.20f;
             player.kbBuff = true;

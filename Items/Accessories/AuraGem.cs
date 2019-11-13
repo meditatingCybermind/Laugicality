@@ -28,7 +28,7 @@ namespace EnigmaLite.Items.Accessories
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Topaz, 4);
+            recipe.AddIngredient(ItemID.Topaz, 10);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

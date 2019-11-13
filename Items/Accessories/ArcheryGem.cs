@@ -25,22 +25,13 @@ namespace EnigmaLite.Items.Accessories
             player.rangedDamage += 0.10f;
         }
 
-        // public override void AddRecipes()
-        // {
-        //     ModRecipe recipe = new ModRecipe(mod);
-        //     recipe.AddIngredient(303, 4);
-        //     recipe.AddTile(TileID.AlchemyTable);
-        //     recipe.SetResult(this);
-        //     recipe.AddRecipe();
-        // }
-
-        public override void AddRecipes() 
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
-			recipe.AddTile(TileID.AlchemyTable);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(303, 15);
+            recipe.AddTile(TileID.AlchemyTable);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }

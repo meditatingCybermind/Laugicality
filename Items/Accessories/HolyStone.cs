@@ -9,7 +9,7 @@ namespace EnigmaLite.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Take less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness");
+            Tooltip.SetDefault("Take less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 30% \nEquip in last slot for maximum effectiveness");
         }
 
         public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace EnigmaLite.Items.Accessories
             player.maxMinions++;
             player.resistCold = true;
             player.lifeMagnet = true;
-            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 20 * 20 - (player.statLifeMax / 5 / 20 * 20);
+            player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 30 * 30 - (player.statLifeMax / 5 / 30 * 30);
         }
 
         public override void AddRecipes()
@@ -35,6 +35,7 @@ namespace EnigmaLite.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "LebenCrystal", 1);
             recipe.AddIngredient(null, "VerteCrystal", 1);
+            recipe.AddIngredient(null, "AuraGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

@@ -23,7 +23,7 @@ namespace EnigmaLite.Items.Accessories
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(289, 4);
+            recipe.AddIngredient(289, 15);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
