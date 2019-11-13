@@ -8,7 +8,7 @@ namespace EnigmaLite.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Mastery of land and air \n+10% Damage Reduction");
+            Tooltip.SetDefault("Mastery of land and air \n+10% Damage Reduction\n+35% Move Speed");
         }
 
         public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace EnigmaLite.Items.Accessories
             player.blockRange++;
             player.pickSpeed -= 0.25f;
             player.slowFall = true;
-            player.moveSpeed += 0.25f;
+            player.moveSpeed += 0.35f;
             player.endurance += 0.10f;
         }
 
@@ -37,6 +37,7 @@ namespace EnigmaLite.Items.Accessories
             recipe.AddIngredient(null, "DeinstCrystal", 1);
             recipe.AddIngredient(null, "BewungCrystal", 1);
             recipe.AddIngredient(null, "AlbusGem", 1);
+            recipe.AddIngredient(null, "VerdiGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
