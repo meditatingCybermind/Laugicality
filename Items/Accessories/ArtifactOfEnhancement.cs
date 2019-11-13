@@ -29,7 +29,6 @@ namespace EnigmaLite.Items.Accessories
             player.nightVision = true;
             player.detectCreature = true;
             player.dangerSense = true;
-            player.AddBuff(116, 2);
             player.slowFall = true;
             player.maxMinions++;
             player.resistCold = true;

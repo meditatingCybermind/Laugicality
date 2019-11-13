@@ -23,7 +23,6 @@ namespace EnigmaLite.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.AddBuff(116, 2);
             player.allDamage += 0.10f;
             player.meleeCrit += 10;
             player.rangedCrit += 10;
@@ -36,7 +35,6 @@ namespace EnigmaLite.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "RageGem", 1);
             recipe.AddIngredient(null, "WrathGem", 1);
-            recipe.AddIngredient(null, "InfernoGem", 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();

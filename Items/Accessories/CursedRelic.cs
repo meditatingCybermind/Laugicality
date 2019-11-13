@@ -24,7 +24,6 @@ namespace EnigmaLite.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.endurance += 0.10f;
-            player.AddBuff(116, 2);
             player.allDamage += 0.20f;
             player.meleeCrit += 20;
             player.rangedCrit += 20;
