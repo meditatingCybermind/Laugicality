@@ -1,9 +1,9 @@
-using Laugicality.Tiles;
+
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class SightStone : LaugicalityItem
     {
@@ -24,17 +24,11 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.spelunker)
-                player.findTreasure = true;
+            player.findTreasure = true;
             Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
-            if (modPlayer.owl)
-                player.nightVision = true;
-            if (modPlayer.hunter)
-                player.detectCreature = true;
-            if (modPlayer.danger)
-                player.dangerSense = true;
-
+            player.nightVision = true;
+            player.detectCreature = true;
+            player.dangerSense = true;
         }
 
         public override void AddRecipes()
@@ -42,7 +36,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "LichtCrystal", 1);
             recipe.AddIngredient(null, "SichtCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

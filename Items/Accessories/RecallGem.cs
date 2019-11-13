@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class RecallGem : LaugicalityItem
     {
@@ -23,7 +23,7 @@ namespace Laugicality.Items.Accessories
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(2350, 4);
-            recipe.AddTile(null, "AlchemicalInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
 
@@ -32,7 +32,7 @@ namespace Laugicality.Items.Accessories
             recipe1.AddIngredient(170, 8); //Glass
             recipe1.AddIngredient(null, "RecallGem");
             recipe1.AddIngredient(109); //Mana Crystal
-            recipe1.AddTile(null, "AlchemicalInfuser");
+            recipe1.AddTile(TileID.AlchemyTable);
             recipe1.SetResult(50); //Magic Mirror
             recipe1.AddRecipe();
 
@@ -41,7 +41,7 @@ namespace Laugicality.Items.Accessories
             recipe2.AddIngredient(664, 8); //Ice
             recipe2.AddIngredient(null, "RecallGem");
             recipe2.AddIngredient(109); //Mana Crystal
-            recipe2.AddTile(null, "AlchemicalInfuser");
+            recipe2.AddTile(TileID.AlchemyTable);
             recipe2.SetResult(3199); //Ice Mirror
             recipe2.AddRecipe();
         }

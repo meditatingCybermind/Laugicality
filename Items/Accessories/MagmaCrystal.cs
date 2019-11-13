@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class MagmaCrystal : LaugicalityItem
     {
@@ -23,13 +23,10 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
-            if (modPlayer.ww)
-                player.waterWalk = true;
-
+            player.waterWalk = true;
         }
 
         public override void AddRecipes()
@@ -37,7 +34,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "WaterWalkingGem", 1);
             recipe.AddIngredient(null, "ObsidianSkinGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

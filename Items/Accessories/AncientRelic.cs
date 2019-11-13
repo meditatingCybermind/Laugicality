@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class AncientRelic : LaugicalityItem
     {
@@ -22,12 +22,10 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
-            if (modPlayer.ww)
-                player.waterWalk = true;
+            player.waterWalk = true;
             player.gills = true;
             player.ignoreWater = true;
             player.accFlipper = true;
@@ -38,11 +36,7 @@ namespace Laugicality.Items.Accessories
             player.wallSpeed += 0.25f;
             player.blockRange++;
             player.pickSpeed -= 0.25f;
-            if (modPlayer.SoulStoneMovement)
-            {
-                if (modPlayer.feather)
-                    player.slowFall = true;
-            }
+            player.slowFall = true;
             player.moveSpeed += 0.25f;
         }
 
@@ -51,7 +45,8 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "AlterationStone", 1);
             recipe.AddIngredient(null, "AquaStone", 1);
-            recipe.AddTile(null, "AncientEnchanter");
+            recipe.AddTile(TileID.CrystalBall);
+
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

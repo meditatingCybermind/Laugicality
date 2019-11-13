@@ -1,9 +1,8 @@
-using Laugicality.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class InfernoGem : LaugicalityItem
     {
@@ -30,24 +29,15 @@ namespace Laugicality.Items.Accessories
             player.AddBuff(116, 2);
         }
 
-
-        public override bool UseItem(Player player)
-        {
-            LaugicalityPlayer.Get(player).inf = !LaugicalityPlayer.Get(player).inf;
-            Main.NewText(LaugicalityPlayer.Get(player).inf.ToString(), 250, 250, 0);
-            return true;
-        }
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(2348, 4);
-            recipe.AddTile(null, "AlchemicalInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
 
             ModRecipe hrecipe = new ModRecipe(mod);
-            hrecipe.AddIngredient(mod, nameof(ObsidiumBar), 8);
             hrecipe.AddTile(77);
             hrecipe.SetResult(2422);
             hrecipe.AddRecipe();

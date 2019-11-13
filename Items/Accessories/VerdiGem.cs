@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class VerdiGem : LaugicalityItem
     {
@@ -28,8 +28,8 @@ namespace Laugicality.Items.Accessories
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "LiquidVerdi", 4);
-            recipe.AddTile(null, "AlchemicalInfuser");
+            recipe.AddIngredient(ItemID.Emerald, 4);
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

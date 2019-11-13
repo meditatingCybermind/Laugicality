@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace Laugicality.Items
+namespace EnigmaLite.Items
 {
     public abstract class LaugicalityItem : ModItem
     {

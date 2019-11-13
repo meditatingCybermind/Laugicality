@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class ArtifactOfRestoration : LaugicalityItem
     {
@@ -32,7 +32,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "UltraHealingRelic", 1);
             recipe.AddIngredient(null, "UltraManaRelic", 1);
-            recipe.AddTile(412);
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

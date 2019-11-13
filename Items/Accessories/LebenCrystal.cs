@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class LebenCrystal : LaugicalityItem
     {
@@ -34,7 +34,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "LifeforceGem", 1);
             recipe.AddIngredient(null, "HeartreachGem", 1);
             recipe.AddIngredient(null, "RegenerationGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class WaterWalkingGem : LaugicalityItem
     {
@@ -29,18 +29,11 @@ namespace Laugicality.Items.Accessories
             player.waterWalk = true;
         }
         
-        public override bool UseItem(Player player)
-        {
-            LaugicalityPlayer.Get(player).ww = !LaugicalityPlayer.Get(player).ww;
-            Main.NewText(LaugicalityPlayer.Get(player).ww.ToString(), 250, 250, 0);
-            return true;
-        }
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(302, 4);
-            recipe.AddTile(null, "AlchemicalInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
 

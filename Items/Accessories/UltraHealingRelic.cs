@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class UltraHealingRelic : LaugicalityItem
     {
@@ -31,7 +31,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "HealingCrystal", 1);
             recipe.AddIngredient(null, "MegaHealingStone", 1);
-            recipe.AddTile(null, "AncientEnchanter");
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

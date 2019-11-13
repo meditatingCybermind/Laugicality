@@ -2,14 +2,14 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class ReichCrystal : LaugicalityItem
     {
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rogue Crystal");
-            Tooltip.SetDefault("+10% Ranged damage\n20% Chance to not use ammo\nIncreased Enemy Spawns");
+            Tooltip.SetDefault("+10% Ranged damage\n20% Chance to not use ammo");
         }
 
         public override void SetDefaults()
@@ -23,11 +23,8 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.ammoCost80 = true;
             player.rangedDamage += 0.10f;
-            if (!modPlayer.battle)
-                player.enemySpawns = true;
         }
 
         public override void AddRecipes()
@@ -35,8 +32,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ArcheryGem", 1);
             recipe.AddIngredient(null, "AmmoReservationGem", 1);
-            recipe.AddIngredient(null, "BattleGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

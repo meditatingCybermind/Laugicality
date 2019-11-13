@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class HallowedRelic : LaugicalityItem
     {
@@ -23,22 +23,12 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneVisuals)
-            {
-                if (modPlayer.spelunker)
-                    player.findTreasure = true;
-                Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
-                if (modPlayer.owl)
-                    player.nightVision = true;
-                if (modPlayer.hunter)
-                    player.detectCreature = true;
-                if (modPlayer.danger)
-                    player.dangerSense = true;
-            }
+            player.findTreasure = true;
+            Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
+            player.nightVision = true;
+            player.detectCreature = true;
+            player.dangerSense = true;
             player.maxMinions++;
-            if (modPlayer.calm)
-                player.calmed = true;
             player.resistCold = true;
             player.lifeMagnet = true;
             player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 20 * 20 - (player.statLifeMax / 5 / 20 * 20);
@@ -49,7 +39,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "HolyStone", 1);
             recipe.AddIngredient(null, "SightStone", 1);
-            recipe.AddTile(null, "AncientEnchanter");
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

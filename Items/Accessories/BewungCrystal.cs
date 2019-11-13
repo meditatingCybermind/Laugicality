@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class BewungCrystal : LaugicalityItem
     {
@@ -23,12 +23,7 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneMovement)
-            {
-                if (modPlayer.feather)
-                    player.slowFall = true;
-            }
+            player.slowFall = true;
             player.moveSpeed += 0.25f;
         }
 
@@ -37,7 +32,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "FeatherfallGem", 1);
             recipe.AddIngredient(null, "SwiftnessGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

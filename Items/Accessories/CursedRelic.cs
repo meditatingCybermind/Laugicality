@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class CursedRelic : LaugicalityItem
     {
@@ -24,9 +24,7 @@ namespace Laugicality.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.endurance += 0.10f;
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneVisuals && modPlayer.inf)
-                player.AddBuff(116, 2);
+            player.AddBuff(116, 2);
             player.allDamage += 0.10f;
             player.meleeCrit += 10;
             player.rangedCrit += 10;
@@ -35,8 +33,6 @@ namespace Laugicality.Items.Accessories
             player.manaRegenBonus += 25;
             player.magicDamage += 0.20f;
             player.kbBuff = true;
-            if (modPlayer.battle)
-                player.enemySpawns = true;
             if (player.thorns < 1f)
             {
                 player.thorns = 0.333333343f;
@@ -50,7 +46,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "TitanStone", 1);
             recipe.AddIngredient(null, "AggressionStone", 1);
-            recipe.AddTile(null, "AncientEnchanter");
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

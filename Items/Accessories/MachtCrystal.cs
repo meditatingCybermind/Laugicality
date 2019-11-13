@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class MachtCrystal : LaugicalityItem
     {
@@ -23,12 +23,7 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneVisuals)
-            {
-                if (modPlayer.inf)
-                    player.AddBuff(116, 2);
-            }
+            player.AddBuff(116, 2);
             player.allDamage += 0.10f;
             player.meleeCrit += 10;
             player.rangedCrit += 10;
@@ -42,7 +37,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "RageGem", 1);
             recipe.AddIngredient(null, "WrathGem", 1);
             recipe.AddIngredient(null, "InfernoGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

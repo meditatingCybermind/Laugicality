@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class SichtCrystal : LaugicalityItem
     {
@@ -23,14 +23,9 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.spelunker)
-                player.findTreasure = true;
-            if (modPlayer.hunter)
-                player.detectCreature = true;
-            if (modPlayer.danger)
-                player.dangerSense = true;
-
+            player.findTreasure = true;
+            player.detectCreature = true;
+            player.dangerSense = true;
         }
 
         public override void AddRecipes()
@@ -39,7 +34,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "HunterGem", 1);
             recipe.AddIngredient(null, "DangersenseGem", 1);
             recipe.AddIngredient(null, "SpelunkerGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

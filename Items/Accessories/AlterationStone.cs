@@ -1,9 +1,8 @@
-using Laugicality.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class AlterationStone : LaugicalityItem
     {
@@ -27,12 +26,7 @@ namespace Laugicality.Items.Accessories
             player.wallSpeed += 0.25f;
             player.blockRange++;
             player.pickSpeed -= 0.25f;
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneMovement)
-            {
-                if (modPlayer.feather)
-                    player.slowFall = true;
-            }
+            player.slowFall = true;
             player.moveSpeed += 0.25f;
         }
 
@@ -41,7 +35,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "DeinstCrystal", 1);
             recipe.AddIngredient(null, "BewungCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

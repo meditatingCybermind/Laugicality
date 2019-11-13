@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class KekCrystal : LaugicalityItem
     {
@@ -35,7 +35,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "MagicPowerGem", 1);
             recipe.AddIngredient(null, "ManaRegenerationGem", 1);
             recipe.AddIngredient(null, "TitanGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class UltraManaRelic : LaugicalityItem
     {
@@ -30,7 +30,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ManaCrystal", 1);
             recipe.AddIngredient(null, "MegaManaStone", 1);
-            recipe.AddTile(null, "AncientEnchanter");
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

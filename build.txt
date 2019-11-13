@@ -1,11 +1,10 @@
 author = Laugic 
 version = 0.14.1
-displayName = [c/85C1E9:The Enigma Mod!]
-homepage = https://discord.gg/qa6QnZs
+displayName = [c/85C1E9:Enigma's Potion Gems Lite!]
+homepage = https://google.com
 hideCode = false
 hideResources = false
 includeSource = true
 includePDB = true
 buildIgnore = *.csproj, *.zip, *.user, obj\*, bin\*, .vs\*, .git\*, *.gitignore
 languageVersion = 6
-modReferences = WebmilioCommons@0.1.7.10

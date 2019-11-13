@@ -1,9 +1,9 @@
-using Laugicality.Tiles;
+
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class AquaStone : LaugicalityItem
     {
@@ -23,12 +23,10 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
-            if (modPlayer.ww)
-                player.waterWalk = true;
+            player.waterWalk = true;
             player.gills = true;
             player.ignoreWater = true;
             player.accFlipper = true;
@@ -43,7 +41,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "WasserCrystal", 1);
             recipe.AddIngredient(null, "MagmaCrystal", 1);
             recipe.AddIngredient(null, "AngelnCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

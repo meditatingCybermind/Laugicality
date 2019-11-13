@@ -1,9 +1,9 @@
-using Laugicality.Tiles;
+
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class TitanStone : LaugicalityItem
     {
@@ -25,12 +25,7 @@ namespace Laugicality.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.endurance += 0.10f;
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneVisuals)
-            {
-                if (modPlayer.inf)
-                    player.AddBuff(116, 2);
-            }
+            player.AddBuff(116, 2);
             if (player.thorns < 1f)
             {
                 player.thorns = 0.333333343f;
@@ -47,7 +42,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "PanzerCrystal", 1);
             recipe.AddIngredient(null, "MachtCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

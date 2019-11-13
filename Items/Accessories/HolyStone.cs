@@ -1,15 +1,15 @@
-using Laugicality.Tiles;
+
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class HolyStone : LaugicalityItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Decreased enemy spawn rate \nTake less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness");
+            Tooltip.SetDefault("Take less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness");
         }
 
         public override void SetDefaults()
@@ -24,10 +24,7 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.maxMinions++;
-            if (modPlayer.calm)
-                player.calmed = true;
             player.resistCold = true;
             player.lifeMagnet = true;
             player.statLifeMax2 += (player.statLifeMax + player.statLifeMax2) / 5 / 20 * 20 - (player.statLifeMax / 5 / 20 * 20);
@@ -38,7 +35,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "LebenCrystal", 1);
             recipe.AddIngredient(null, "VerteCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

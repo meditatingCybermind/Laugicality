@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class PanzerCrystal : LaugicalityItem
     {
@@ -38,7 +38,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "IronskinGem", 1);
             recipe.AddIngredient(null, "EnduranceGem", 1);
             recipe.AddIngredient(null, "ThornsGem", 1);
-            recipe.AddTile(null, "CrystalineInfuser");
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class ArtifactOfEnhancement : LaugicalityItem
     {
@@ -24,26 +24,13 @@ namespace Laugicality.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
-            if (modPlayer.SoulStoneVisuals)
-            {
-                if (modPlayer.spelunker)
-                    player.findTreasure = true;
-                Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
-                if (modPlayer.owl)
-                    player.nightVision = true;
-                if (modPlayer.hunter)
-                    player.detectCreature = true;
-                if (modPlayer.danger)
-                    player.dangerSense = true;
-                if(modPlayer.inf)
-                    player.AddBuff(116, 2);
-            }
-            if (modPlayer.SoulStoneMovement)
-            {
-                if (modPlayer.feather)
-                    player.slowFall = true;
-            }
+            player.findTreasure = true;
+            Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
+            player.nightVision = true;
+            player.detectCreature = true;
+            player.dangerSense = true;
+            player.AddBuff(116, 2);
+            player.slowFall = true;
             player.maxMinions++;
             player.resistCold = true;
             player.lifeMagnet = true;
@@ -51,8 +38,7 @@ namespace Laugicality.Items.Accessories
             player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
-            if (modPlayer.ww)
-                player.waterWalk = true;
+            player.waterWalk = true;
             player.gills = true;
             player.ignoreWater = true;
             player.accFlipper = true;
@@ -87,7 +73,7 @@ namespace Laugicality.Items.Accessories
             recipe.AddIngredient(null, "AncientRelic", 1);
             recipe.AddIngredient(null, "CursedRelic", 1);
             recipe.AddIngredient(null, "HallowedRelic", 1);
-            recipe.AddTile(412);
+            recipe.AddTile(TileID.CrystalBall);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

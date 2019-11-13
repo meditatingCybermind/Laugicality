@@ -1,15 +1,14 @@
-using Laugicality.Tiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Laugicality.Items.Accessories
+namespace EnigmaLite.Items.Accessories
 {
     public class AggressionStone : LaugicalityItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("+10% Ranged damage \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen \nIncreased Enemy Spawns");
+            Tooltip.SetDefault("+10% Ranged damage \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen");
         }
 
         public override void SetDefaults()
@@ -25,12 +24,9 @@ namespace Laugicality.Items.Accessories
         {
             player.manaRegenBonus += 25;
             player.magicDamage += 0.20f;
-            LaugicalityPlayer modPlayer = LaugicalityPlayer.Get(player);
             player.kbBuff = true;
             player.ammoCost80 = true;
             player.rangedDamage += 0.10f;
-            if (!modPlayer.battle)
-                player.enemySpawns = true;
         }
 
         public override void AddRecipes()
@@ -38,7 +34,7 @@ namespace Laugicality.Items.Accessories
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ReichCrystal", 1);
             recipe.AddIngredient(null, "KekCrystal", 1);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(TileID.AlchemyTable);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
