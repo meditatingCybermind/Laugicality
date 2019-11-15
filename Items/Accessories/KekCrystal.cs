@@ -23,7 +23,8 @@ namespace EnigmaLite.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.manaRegenBonus += 25;
+            player.manaRegenBonus += 35;
+            player.player.manaRegenDelayBonus += 5;
             player.magicDamage += 0.20f;
             player.kbBuff = true;
 

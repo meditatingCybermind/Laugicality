@@ -56,7 +56,8 @@ namespace EnigmaLite.Items.Accessories
             player.rangedCrit += 20;
             player.magicCrit += 20;
             player.thrownCrit += 20;
-            player.manaRegenBonus += 25;
+            player.manaRegenBonus += 35;
+            player.manaRegenDelayBonus += 5;
             player.magicDamage += 0.20f;
             player.kbBuff = true;
             if (player.thorns < 1f)
